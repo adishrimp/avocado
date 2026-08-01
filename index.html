@@ -40,23 +40,27 @@ background-attachment: fixed;
     }
 
     button {
-      padding: 14px 26px;
-      font-size: 18px;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      margin: 0 15px;
-    }
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin: 0 15px;
+}
 
-    #yes {
-      background-color: #ff69b4;
-      color: white;
-    }
+button img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
 
-    #no {
-      background-color: #ff69b4;
-      position: relative;
-    }
+#yes {
+  background: transparent;
+}
+
+#no {
+  background: transparent;
+  position: relative;
+}
 
     #celebration {
       display: none;
@@ -130,8 +134,8 @@ background-attachment: fixed;
     <h1 id="question">Will you go out with me? </h1>
 
     <div class="buttons" id="buttons">
-      <button id="yes"><img src="button1.jpg" width="170"></button>
-      <button id="no"><img src="button2.jpg" width="170"></button>
+      <button id="yes"><img src="button1.jpeg" width="170"></button>
+      <button id="no"><img src="button2.jpeg" width="170"></button>
     </div>
 
     <div id="celebration">
