@@ -167,12 +167,15 @@ button img {
       const dy = e.clientY - (rect.top + rect.height / 2);
 
       if (Math.abs(dx) < danger && Math.abs(dy) < danger) {
-        noBtn.style.position = "fixed";
-        noBtn.style.left =
-          Math.random() * (window.innerWidth - rect.width) + "px";
-        noBtn.style.top =
-          Math.random() * (window.innerHeight - rect.height) + "px";
-      }
+  noBtn.style.position = "fixed";
+  noBtn.style.zIndex = "10";
+
+  const maxX = window.innerWidth - rect.width - 20;
+  const maxY = window.innerHeight - rect.height - 20;
+
+  noBtn.style.left = Math.max(20, Math.random() * maxX) + "px";
+  noBtn.style.top = Math.max(20, Math.random() * maxY) + "px";
+}
     });
 
     const assets = [
