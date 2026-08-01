@@ -158,25 +158,30 @@ button img {
 
     /* NO button avoidance */
     document.addEventListener("mousemove", (e) => {
-      if (!noBtn) return;
+  const rect = noBtn.getBoundingClientRect();
+  const danger = 100;
 
-      const rect = noBtn.getBoundingClientRect();
-      const danger = 90;
+  const dx = e.clientX - (rect.left + rect.width / 2);
+  const dy = e.clientY - (rect.top + rect.height / 2);
 
-      const dx = e.clientX - (rect.left + rect.width / 2);
-      const dy = e.clientY - (rect.top + rect.height / 2);
+  if (Math.abs(dx) < danger && Math.abs(dy) < danger) {
 
-      if (Math.abs(dx) < danger && Math.abs(dy) < danger) {
-  noBtn.style.position = "fixed";
-  noBtn.style.zIndex = "10";
+    noBtn.style.position = "fixed";
+    noBtn.style.zIndex = "10";
 
-  const maxX = window.innerWidth - rect.width - 20;
-  const maxY = window.innerHeight - rect.height - 20;
+    const buttonWidth = noBtn.offsetWidth;
+    const buttonHeight = noBtn.offsetHeight;
 
-  noBtn.style.left = Math.max(20, Math.random() * maxX) + "px";
-  noBtn.style.top = Math.max(20, Math.random() * maxY) + "px";
-}
-    });
+    const randomX = Math.random() * 
+      (window.innerWidth - buttonWidth);
+
+    const randomY = Math.random() * 
+      (window.innerHeight - buttonHeight);
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+  }
+});
 
     const assets = [
       "❤️",
